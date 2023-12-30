@@ -17,6 +17,7 @@ export const getProducts = async (request, response) => {
 export const getProductById = async (request, response) => {
     try {
         const products = await Product.findOne({ 'id': request.params.id });
+        console.log(products);
         if(products){
             response.status(200).json(products);
         }else{
